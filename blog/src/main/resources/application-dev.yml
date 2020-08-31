@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: HY1998@
+
+#根据实体类属性更新数据库的表
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true #输出sql语句
+logging:
+  level:
+    root: info
+    com.hy.blog: debug
+  file:
+    path:
+    name: log/myblog-dev.log
+
+#mybatis:
+#  type-aliases-package: com.star.entity
+#  mapper-locations: classpath:mapper/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+
