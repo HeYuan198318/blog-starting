@@ -1,40 +1,38 @@
 package com.hy.entity;
 
-import com.star.queryvo.DetailedBlog;
-import org.springframework.format.annotation.DateTimeFormat;
-
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
- * @Description: 评论实体类
- * @Author: ONESTAR
- * @Date: Created in 9:09 2020/3/26
- * @QQ群: 530311074
- * @URL: https://onestar.newstar.net.cn/
+ * Created by limi on 2017/10/14.
  */
-public class Comment {
+@Entity
+@Table(name = "t_comment")
+public class Comment implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nickname;
-    private String email;
-    private String content;
+    private String nickname; //昵称
+    private String email;   //邮箱
+    private String content;  //内容
+    private String avatar;   //头像
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createTime;  //创建时间
 
-    //头像
-    private String avatar;
-    private Date createTime;
+    @ManyToOne
+    private Blog blog;
 
-    private Long blogId;
-    private Long parentCommentId;
-    private String parentNickname;
-
-    //回复评论
+    @OneToMany(mappedBy = "parentComment")
     private List<Comment> replyComments = new ArrayList<>();
-    private Comment parentComment;
-    private boolean adminComment;
 
-    private DetailedBlog blog;
+    @ManyToOne
+    private Comment parentComment;
+
+    private boolean adminComment;
 
     public Comment() {
     }
@@ -87,28 +85,12 @@ public class Comment {
         this.createTime = createTime;
     }
 
-    public Long getBlogId() {
-        return blogId;
+    public Blog getBlog() {
+        return blog;
     }
 
-    public void setBlogId(Long blogId) {
-        this.blogId = blogId;
-    }
-
-    public Long getParentCommentId() {
-        return parentCommentId;
-    }
-
-    public void setParentCommentId(Long parentCommentId) {
-        this.parentCommentId = parentCommentId;
-    }
-
-    public String getParentNickname() {
-        return parentNickname;
-    }
-
-    public void setParentNickname(String parentNickname) {
-        this.parentNickname = parentNickname;
+    public void setBlog(Blog blog) {
+        this.blog = blog;
     }
 
     public List<Comment> getReplyComments() {
@@ -125,14 +107,6 @@ public class Comment {
 
     public void setParentComment(Comment parentComment) {
         this.parentComment = parentComment;
-    }
-
-    public DetailedBlog getBlog() {
-        return blog;
-    }
-
-    public void setBlog(DetailedBlog blog) {
-        this.blog = blog;
     }
 
     public boolean isAdminComment() {
@@ -152,13 +126,10 @@ public class Comment {
                 ", content='" + content + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", createTime=" + createTime +
-                ", blogId=" + blogId +
-                ", parentCommentId=" + parentCommentId +
-                ", parentNickname='" + parentNickname + '\'' +
+                ", blog=" + blog +
                 ", replyComments=" + replyComments +
                 ", parentComment=" + parentComment +
                 ", adminComment=" + adminComment +
-                ", blog=" + blog +
                 '}';
     }
 }

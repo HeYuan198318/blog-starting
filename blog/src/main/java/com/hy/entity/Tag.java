@@ -1,7 +1,5 @@
 package com.hy.entity;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,19 +7,18 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "t_type")
-public class Type implements Serializable {
+@Table(name = "t_tag")
+public class Tag implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "分类名称不能为空")
     private String name; //名称
 
-    @OneToMany(mappedBy = "type")
+    @ManyToMany(mappedBy = "tags")
     private List<Blog> blogs = new ArrayList<>();
 
-    public Type() {
+    public Tag() {
     }
 
     public Long getId() {
@@ -50,7 +47,7 @@ public class Type implements Serializable {
 
     @Override
     public String toString() {
-        return "Type{" +
+        return "Tag{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

@@ -1,37 +1,57 @@
 package com.hy.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
- * @Description: 博客实体类
+ * Created by limi on 2017/10/14.
  */
-public class Blog {
+@Entity
+@Table(name = "t_blog")
+public class Blog implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
+
+    @Basic(fetch = FetchType.LAZY)
+    @Lob
     private String content;
     private String firstPicture;
     private String flag;
-    private Integer views; //浏览次数
-
-    private Integer commentCount;
-
+    private Integer views;
     private boolean appreciation;
     private boolean shareStatement;
     private boolean commentabled;
     private boolean published;
     private boolean recommend;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 
-    private Long typeId;
-    private Long userId;
-    private String description;
+    @ManyToOne
     private Type type;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST})
+    private List<Tag> tags = new ArrayList<>();
+
+
+    @ManyToOne
     private User user;
+
+    @OneToMany(mappedBy = "blog")
     private List<Comment> comments = new ArrayList<>();
+
+    @Transient
+    private String tagIds;
+
+    private String description;
 
     public Blog() {
     }
@@ -82,14 +102,6 @@ public class Blog {
 
     public void setViews(Integer views) {
         this.views = views;
-    }
-
-    public Integer getCommentCount() {
-        return commentCount;
-    }
-
-    public void setCommentCount(Integer commentCount) {
-        this.commentCount = commentCount;
     }
 
     public boolean isAppreciation() {
@@ -148,20 +160,47 @@ public class Blog {
         this.updateTime = updateTime;
     }
 
-    public Long getTypeId() {
-        return typeId;
+    public Type getType() {
+        return type;
     }
 
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
+    public void setType(Type type) {
+        this.type = type;
     }
 
-    public Long getUserId() {
-        return userId;
+    public List<Tag> getTags() {
+        return tags;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+
+    public String getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(String tagIds) {
+        this.tagIds = tagIds;
     }
 
     public String getDescription() {
@@ -172,29 +211,29 @@ public class Blog {
         this.description = description;
     }
 
-    public Type getType() {
-        return type;
+    public void init() {
+        this.tagIds = tagsToIds(this.getTags());
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    //1,2,3
+    private String tagsToIds(List<Tag> tags) {
+        if (!tags.isEmpty()) {
+            StringBuffer ids = new StringBuffer();
+            boolean flag = false;
+            for (Tag tag : tags) {
+                if (flag) {
+                    ids.append(",");
+                } else {
+                    flag = true;
+                }
+                ids.append(tag.getId());
+            }
+            return ids.toString();
+        } else {
+            return tagIds;
+        }
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
 
     @Override
     public String toString() {
@@ -205,7 +244,6 @@ public class Blog {
                 ", firstPicture='" + firstPicture + '\'' +
                 ", flag='" + flag + '\'' +
                 ", views=" + views +
-                ", commentCount=" + commentCount +
                 ", appreciation=" + appreciation +
                 ", shareStatement=" + shareStatement +
                 ", commentabled=" + commentabled +
@@ -213,12 +251,12 @@ public class Blog {
                 ", recommend=" + recommend +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
-                ", typeId=" + typeId +
-                ", userId=" + userId +
-                ", description='" + description + '\'' +
                 ", type=" + type +
+                ", tags=" + tags +
                 ", user=" + user +
                 ", comments=" + comments +
+                ", tagIds='" + tagIds + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

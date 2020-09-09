@@ -1,25 +1,31 @@
 package com.hy.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-/**
- * @Description: 用户实体类
- * @Author: ONESTAR
- * @Date: Created in 9:18 2020/3/26
- * @QQ群: 530311074
- * @URL: https://onestar.newstar.net.cn/
- */
-public class User {
+@Entity(name = "t_user")
+@Table
+public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nickname;
-    private String username;
-    private String password;
-    private String email;
-    private String avatar;
-    private Integer type;
-    private Date createTime;
-    private Date updateTime;
+    private String nickname; //昵称
+    private String username; //用户名
+    private String password; //密码
+    private String email;  //邮箱
+    private String avatar; //头像
+    private Integer type; //类型
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createTime; //创建时间
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updateTime; //更新时间
+
+    @OneToMany(mappedBy = "user")
+    private List<Blog> blogs = new ArrayList<>();
 
     public User() {
     }
@@ -94,6 +100,15 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+
+    public List<Blog> getBlogs() {
+        return blogs;
+    }
+
+    public void setBlogs(List<Blog> blogs) {
+        this.blogs = blogs;
     }
 
     @Override
