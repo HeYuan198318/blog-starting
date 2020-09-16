@@ -1,13 +1,12 @@
 package com.hy.service.Impl;
 
-import com.github.pagehelper.Page;
 import com.hy.NotFoundException;
 import com.hy.dao.TypeDao;
 import com.hy.entity.Type;
 import com.hy.service.TypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +38,7 @@ public class TypeServiceImpl implements TypeService {
     @Transactional
     @Override
     public Page<Type> ListType(Pageable pageable) {
-        return (Page<Type>) typeDao.findAll(pageable);
+        return typeDao.findAll(pageable);
     }
 
     @Transactional
@@ -54,7 +53,13 @@ public class TypeServiceImpl implements TypeService {
     }
     @Transactional
     @Override
-    public int deleteType(Long id) {
-        return deleteType(id);
+    public void deleteType(Long id) {
+        typeDao.deleteById(id);
+    }
+
+    //查询是否有重复分类
+    @Override
+    public Type getTypeByName(String name) {
+        return typeDao.findByName(name);
     }
 }

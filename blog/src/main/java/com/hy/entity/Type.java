@@ -1,8 +1,8 @@
 package com.hy.entity;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,8 @@ public class Type implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "分类名称不能为空")
+   // @NotBlank(message = "分类名称不能为空")
+    @NotEmpty(message = "分类名称不能为空")
     private String name; //名称
 
     @OneToMany(mappedBy = "type")

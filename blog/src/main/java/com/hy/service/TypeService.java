@@ -1,7 +1,7 @@
 package com.hy.service;
 
-import com.github.pagehelper.Page;
 import com.hy.entity.Type;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 
@@ -15,5 +15,7 @@ public interface TypeService {
     Page<Type> ListType(Pageable pageable);
     Type updateType(Long id,Type type);
 
-    int deleteType(Long id);
+    void deleteType(Long id);
+
+    Type getTypeByName(String name);
 }
