@@ -11,4 +11,10 @@ spring:
     encoding: UTF-8
   profiles:
     active: dev
+#开启热部署
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+
 

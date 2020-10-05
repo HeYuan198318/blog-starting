@@ -2,6 +2,10 @@ package com.hy.controller.admin;
 
 
 import com.hy.entity.Blog;
+import com.hy.entity.User;
+import com.hy.service.BlogService;
+import com.hy.service.TagService;
+import com.hy.service.TypeService;
 import com.hy.vo.BlogQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -29,21 +33,21 @@ public class BlogController {
     private static final String REDIRECT_LIST = "redirect:/admin/blogs";
 
 
-   /* @Autowired
+    @Autowired
     private BlogService blogService;
     @Autowired
     private TypeService typeService;
     @Autowired
-    private TagService tagService;*/
+    private TagService tagService;
 
     @GetMapping("/blogs")
-    public String blogs() {
-       /* model.addAttribute("types", typeService.listType());
-        model.addAttribute("page", blogService.listBlog(pageable, blog));*/
+    public String blogs(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC)Pageable pageable,BlogQuery blog,Model model) {
+        model.addAttribute("types", typeService.listType());
+        model.addAttribute("page", blogService.listBlog(pageable, blog));
         return LIST;
     }
 
-    /*@PostMapping("/blogs/search")
+    @PostMapping("/blogs/search")
     public String search(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
                          BlogQuery blog, Model model) {
         model.addAttribute("page", blogService.listBlog(pageable, blog));
@@ -51,7 +55,7 @@ public class BlogController {
     }
 
 
-    @GetMapping("/blogs/input")
+   @GetMapping("/blogs/input")
     public String input(Model model) {
         setTypeAndTag(model);
         model.addAttribute("blog", new Blog());
@@ -74,7 +78,6 @@ public class BlogController {
     }
 
 
-
     @PostMapping("/blogs")
     public String post(Blog blog, RedirectAttributes attributes, HttpSession session) {
         blog.setUser((User) session.getAttribute("user"));
@@ -95,14 +98,12 @@ public class BlogController {
         return REDIRECT_LIST;
     }
 
-
     @GetMapping("/blogs/{id}/delete")
     public String delete(@PathVariable Long id,RedirectAttributes attributes) {
         blogService.deleteBlog(id);
         attributes.addFlashAttribute("message", "删除成功");
         return REDIRECT_LIST;
     }
-*/
 
 
 }

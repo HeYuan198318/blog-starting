@@ -15,6 +15,7 @@ public class Type implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
    // @NotBlank(message = "分类名称不能为空")
     @NotEmpty(message = "分类名称不能为空")
     private String name; //名称
