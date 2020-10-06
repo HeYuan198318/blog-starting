@@ -19,8 +19,8 @@
       <a href="#" th:href="@{/admin/types}" class=" m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
       <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
       <div class="right m-item m-mobile-hide menu">
-        <div class="ui dropdown  item">
-          <div class="text">
+        <div class="ui dropdown item">
+          <div>
             <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005" th:src="@{${session.user.avatar}}">
             <span th:text="${session.user.nickname}">李仁密</span>
           </div>

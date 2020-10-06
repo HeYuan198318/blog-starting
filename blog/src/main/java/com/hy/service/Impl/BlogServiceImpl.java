@@ -148,6 +148,7 @@ public class BlogServiceImpl implements BlogService {
 
     @Transactional
     @Override
-    public void deleteBlog(Long id){ blogDao.deleteById(id);
+    public void deleteBlog(Long id){
+        blogDao.deleteById(id);
     }
 }

@@ -19,9 +19,9 @@ logging:
   level:
     root: info
     com.hy.blog: debug
-  file:
-    path:
-    name: log/myblog-dev.log
+#  file:
+#    path:
+#    name: log/myblog-dev.log
 
 
 #mybatis:
