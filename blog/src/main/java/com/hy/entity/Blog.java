@@ -51,7 +51,7 @@ public class Blog implements Serializable {
     @Transient
     private String tagIds;
 
-    private String description;
+    private String description; //博客描述
 
     public Blog() {
     }
