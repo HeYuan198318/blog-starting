@@ -48,7 +48,6 @@ public class BlogServiceImpl implements BlogService {
         BeanUtils.copyProperties(blog,b);
         String content = b.getContent();
         b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
-
         blogDao.updateViews(id);
         return b;
     }

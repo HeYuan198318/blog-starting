@@ -14,8 +14,8 @@ body {
     padding: 1em !important;
 }
 .m-padded-tb-mini {
-    padding-top: 0.1em !important;
-    padding-bottom: 0.1em !important;
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
 }
 .m-padded-tb-tiny {
     padding-top: 0.3em !important;
@@ -34,7 +34,7 @@ body {
     padding-bottom: 2em !important;
 }
 .m-padded-tb-big {
-    padding-top: 1em !important;
+    padding-top: 3em !important;
     padding-bottom: 3em !important;
 }
 .m-padded-tb-huge {
@@ -42,8 +42,8 @@ body {
     padding-bottom: 4em !important;
 }
 .m-padded-tb-massive {
-    padding-top: 1.5em !important;
-    padding-bottom: 1.5em !important;
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
 }
 
 
@@ -67,9 +67,6 @@ body {
 }
 .m-text-lined {
     line-height: 1.8;
-}
-.m-text-font{
-	font-size: 13px !important;
 }
 
 /*-----margin------*/
@@ -149,22 +146,14 @@ body {
 .m-black {
     color: #333 !important;
 }
+.m-teal {
+    color: #00B5AD !important;
+}
+
+
 
 .m-mobile-show {
    display: none !important;
-}
-/*导航栏样式*/
-.gird-header {
-    width: 100%;
-    min-height: 60px;
-    opacity: 0.5;
-    position: fixed;
-    background-color: rgba(0,0,0,1);
-    z-index: 11002;
-    top: 0;
-    left: 0;
-    /*border-bottom: 1px solid #e8e9e7;*/
-    font-size: 15px;
 }
 
 @media screen and (max-width: 768px){
