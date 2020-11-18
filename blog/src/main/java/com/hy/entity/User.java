@@ -17,6 +17,7 @@ public class User implements Serializable {
     private String username; //用户名
     private String password; //密码
     private String email;  //邮箱
+    private String qq;  //QQ
     private String avatar; //头像
     private Integer type; //类型
     @Temporal(TemporalType.TIMESTAMP)
@@ -109,6 +110,14 @@ public class User implements Serializable {
 
     public void setBlogs(List<Blog> blogs) {
         this.blogs = blogs;
+    }
+
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq;
     }
 
     @Override
