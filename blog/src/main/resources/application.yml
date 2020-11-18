@@ -11,7 +11,10 @@ spring:
     encoding: UTF-8
   profiles:
     active: dev
-#开启热部署
+    #修改国际化配置文件路径
+  messages:
+    basename: i18n.messages
+  #开启热部署
   devtools:
     restart:
       enabled: true
