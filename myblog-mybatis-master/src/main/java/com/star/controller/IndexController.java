@@ -91,10 +91,10 @@ public class IndexController {
 //    博客信息
     @GetMapping("/footer/blogmessage")
     public String blogMessage(Model model){
-        int blogTotal = blogService.getBlogTotal();
-        int blogViewTotal = blogService.getBlogViewTotal();
-        int blogCommentTotal = blogService.getBlogCommentTotal();
-        int blogMessageTotal = blogService.getBlogMessageTotal();
+        Integer blogTotal = blogService.getBlogTotal();
+        Integer blogViewTotal = blogService.getBlogViewTotal();
+        Integer blogCommentTotal = blogService.getBlogCommentTotal();
+        Integer blogMessageTotal = blogService.getBlogMessageTotal();
 
         model.addAttribute("blogTotal",blogTotal);
         model.addAttribute("blogViewTotal",blogViewTotal);

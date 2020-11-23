@@ -1,6 +1,8 @@
 
 body {
-    background: url("../images/bg.png");
+    background: url("../images/bg2.jpg");
+    background-attachment:fixed;
+    background-size: 100%;
 }
 
 .m-padded-mini {
@@ -128,6 +130,19 @@ body {
     -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
 }
+/*-----opacity------*/
+.m-opacity {
+    opacity: 0.9 !important;
+}
+.m-opacity-mini {
+    opacity: 0.8 !important;
+}
+.m-opacity-tiny {
+    opacity: 0.6 !important;
+}
+.m-opacity-small {
+    opacity: 0.4 !important;
+}
 
 /*------positon-----*/
 
@@ -154,6 +169,20 @@ body {
 
 .m-mobile-show {
    display: none !important;
+}
+
+/*导航栏样式*/
+.gird-header {
+    width: 100%;
+    min-height: 60px;
+    opacity: 0.8;
+    position: fixed;
+    background-color: rgba(0,0,0,1);
+    z-index: 11002;
+    top: 0;
+    left: 0;
+    /*border-bottom: 1px solid #e8e9e7;*/
+    font-size: 15px;
 }
 
 @media screen and (max-width: 768px){

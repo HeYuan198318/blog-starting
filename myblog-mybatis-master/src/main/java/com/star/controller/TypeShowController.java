@@ -35,9 +35,10 @@ public class TypeShowController {
     @GetMapping("/types/{id}")
     public String types(@RequestParam(defaultValue = "1",value = "pageNum") Integer pageNum, @PathVariable Long id, Model model) {
         List<Type> types = typeService.getAllTypeAndBlog();
+        //List<Type> types = typeService.getAllType();
         System.out.println("types:"+types);
         //-1表示从首页导航点进来的
-        if (id == -1) {
+        if (id == -1 && types.size()>0) {
             id = types.get(0).getId();
         }
         model.addAttribute("types", types);
