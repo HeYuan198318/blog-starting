@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONESTAR-分类</title>
+  <title>赤赤元-分类</title>
   <link href="../static/images/favicon.ico" th:href="@{/images/me.jpg}" rel="icon" type="image/x-ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
   <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
@@ -68,28 +68,21 @@
       </div>
     </div>
 
-    <div class="ui attached segment m-padded-tb-large m-opacity">
+    <!--<div class="ui attached segment m-padded-tb-large m-opacity">
       <div class="ui labeled button m-margin-tb-tiny" th:each="type : ${types}">
         <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic button" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${type.name}">思考与感悟</a>
         <div class="ui basic left pointing label" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}">24</div>
       </div>
-      <!--/*-->
-      <div class="ui labeled button m-margin-tb-tiny">
-        <a href="#" class="ui basic  button">开发者手册</a>
-        <div class="ui basic  left pointing label">24</div>
-      </div>
-      <!--*/-->
+    </div>-->
 
-    </div>
-
-   <!-- <div class="ui segment m-padded-tb-large m-opacity">
-      <div class="ui container" align="center">
+    <div class="ui attached segment m-padded-tb-large m-opacity">
+      <!--<div class="ui container">-->
         <div class="ui labeled button m-margin-tb-tiny" th:each="type : ${types}">
           <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic  button" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${type.name}">好文</a>
-          <div class="ui basic  left pointing label" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}">24</div>
+          <div class="ui basic left pointing label" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}">24</div>
         </div>
-      </div>
-    </div>-->
+      <!--</div>-->
+    </div>
 
     <div class="ui top attached teal m-opacity segment">
       <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${pageInfo.list}">
