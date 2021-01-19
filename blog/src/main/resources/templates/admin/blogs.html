@@ -223,12 +223,18 @@
     });
 
     //消息提示关闭初始化
-    $('.message .close')
+  /*  $('.message .close')
       .on('click', function () {
         $(this)
           .closest('.message')
           .transition('fade');
-      });
+      });*/
+
+   $(function(){
+       setTimeout(function(){
+           $('.message .close').closest('.message').transition('fade');
+       },1500);
+   });
 
     $('#clear-btn')
       .on('click', function() {
