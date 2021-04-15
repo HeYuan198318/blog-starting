@@ -5,9 +5,12 @@ import com.fast.demo.basic.vo.ResponseMsg;
 import com.fast.demo.dao.DataSource;
 import com.fast.demo.service.TestService;
 import com.fast.demo.vo.PlateBasicChoseInfoVo;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.sun.deploy.net.HttpUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import sun.net.www.http.HttpClient;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -35,6 +38,7 @@ public class TestServiceImpl extends BaseApiService implements TestService {
         params.put("factory", factory);
         ResponseMsg data=restTemplate.getForObject(dataSource.TEST_API(), ResponseMsg.class,params);
         List<PlateBasicChoseInfoVo> list= (List<PlateBasicChoseInfoVo>) data.getData();
+
         return setResultSuccessData(list);
     }
 }
