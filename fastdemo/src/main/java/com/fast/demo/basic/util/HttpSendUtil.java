@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.fast.demo.basic.vo.ResponseMsg;
-import net.sf.ezmorph.object.DateMorpher;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -198,7 +196,6 @@ public class HttpSendUtil {
 		//FCT0000075988486
 		//FCT0000075220255
 //		System.out.println(result);//打印POST請求返回值
-
 //		odcList.forEach(System.out::println);
 	}
 
