@@ -18,7 +18,7 @@ class MyblogApplicationTests {
     @Autowired
     UserTestDao userTestDao;
 
-    @Test
+//    @Test
     void contextLoads() {
         //點讚
         final String getTokenUrl = "http://iedu.foxconn.com/Improve2020/Class/LikeWork?workId=55&";

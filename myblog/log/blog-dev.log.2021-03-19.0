@@ -1,0 +1,66 @@
+2021-03-19 23:58:46.682  INFO 10288 --- [main] com.hy.MyblogApplicationTests            : Starting MyblogApplicationTests on LAPTOP-F7NCQTIC with PID 10288 (started by heyuan in E:\ideaproject\blog_deving\blog-starting\myblog)
+2021-03-19 23:58:46.687  INFO 10288 --- [main] com.hy.MyblogApplicationTests            : The following profiles are active: dev
+2021-03-19 23:58:47.394  WARN 10288 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'blogDao' and 'com.hy.dao.BlogDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:58:47.394  WARN 10288 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'commentDao' and 'com.hy.dao.CommentDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:58:47.396  WARN 10288 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'friendLinkDao' and 'com.hy.dao.FriendLinkDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:58:47.397  WARN 10288 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'messageDao' and 'com.hy.dao.MessageDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:58:47.397  WARN 10288 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'pictureDao' and 'com.hy.dao.PictureDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:58:47.397  WARN 10288 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'typeDao' and 'com.hy.dao.TypeDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:58:47.397  WARN 10288 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userDao' and 'com.hy.dao.UserDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:58:47.398  WARN 10288 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.hy]' package. Please check your configuration.
+2021-03-19 23:58:47.552  INFO 10288 --- [main] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2021-03-19 23:58:47.607  INFO 10288 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2021-03-19 23:58:47.608  INFO 10288 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Inlined Test Properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:58:47.608  INFO 10288 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:58:47.608  INFO 10288 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:58:47.608  INFO 10288 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2021-03-19 23:58:47.608  INFO 10288 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application-dev.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:58:47.609  INFO 10288 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:58:47.658  INFO 10288 --- [main] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2021-03-19 23:58:47.929  INFO 10288 --- [main] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2021-03-19 23:58:47.931  INFO 10288 --- [main] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2021-03-19 23:58:49.405  INFO 10288 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-19 23:58:49.595  INFO 10288 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-03-19 23:58:49.849  INFO 10288 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2021-03-19 23:58:49.850  INFO 10288 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2021-03-19 23:58:49.851  INFO 10288 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2021-03-19 23:58:49.852  INFO 10288 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear EntityHelper entityTableMap cache.
+2021-03-19 23:58:50.125  INFO 10288 --- [main] com.hy.MyblogApplicationTests            : Started MyblogApplicationTests in 3.899 seconds (JVM running for 4.832)
+2021-03-19 23:58:50.358  INFO 10288 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-19 23:58:50.524  INFO 10288 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-19 23:58:50.662  INFO 10288 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-19 23:58:50.664  INFO 10288 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-19 23:58:50.680  INFO 10288 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-19 23:59:18.904  INFO 7656 --- [main] com.hy.MyblogApplicationTests            : Starting MyblogApplicationTests on LAPTOP-F7NCQTIC with PID 7656 (started by heyuan in E:\ideaproject\blog_deving\blog-starting\myblog)
+2021-03-19 23:59:18.905  INFO 7656 --- [main] com.hy.MyblogApplicationTests            : The following profiles are active: dev
+2021-03-19 23:59:19.587  WARN 7656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'blogDao' and 'com.hy.dao.BlogDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:59:19.588  WARN 7656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'commentDao' and 'com.hy.dao.CommentDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:59:19.588  WARN 7656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'friendLinkDao' and 'com.hy.dao.FriendLinkDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:59:19.588  WARN 7656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'messageDao' and 'com.hy.dao.MessageDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:59:19.588  WARN 7656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'pictureDao' and 'com.hy.dao.PictureDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:59:19.588  WARN 7656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'typeDao' and 'com.hy.dao.TypeDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:59:19.588  WARN 7656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userDao' and 'com.hy.dao.UserDao' mapperInterface. Bean already defined with the same name!
+2021-03-19 23:59:19.589  WARN 7656 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.hy]' package. Please check your configuration.
+2021-03-19 23:59:19.747  INFO 7656 --- [main] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2021-03-19 23:59:19.803  INFO 7656 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2021-03-19 23:59:19.804  INFO 7656 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Inlined Test Properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:59:19.804  INFO 7656 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:59:19.804  INFO 7656 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:59:19.805  INFO 7656 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2021-03-19 23:59:19.805  INFO 7656 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application-dev.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:59:19.805  INFO 7656 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2021-03-19 23:59:19.850  INFO 7656 --- [main] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2021-03-19 23:59:20.122  INFO 7656 --- [main] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2021-03-19 23:59:20.124  INFO 7656 --- [main] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2021-03-19 23:59:21.518  INFO 7656 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-19 23:59:21.715  INFO 7656 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-03-19 23:59:21.977  INFO 7656 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2021-03-19 23:59:21.978  INFO 7656 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2021-03-19 23:59:21.979  INFO 7656 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2021-03-19 23:59:21.980  INFO 7656 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear EntityHelper entityTableMap cache.
+2021-03-19 23:59:22.230  INFO 7656 --- [main] com.hy.MyblogApplicationTests            : Started MyblogApplicationTests in 3.675 seconds (JVM running for 4.501)
+2021-03-19 23:59:22.478  INFO 7656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-19 23:59:22.649  INFO 7656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-19 23:59:22.769  INFO 7656 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-19 23:59:22.771  INFO 7656 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-19 23:59:22.782  INFO 7656 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
